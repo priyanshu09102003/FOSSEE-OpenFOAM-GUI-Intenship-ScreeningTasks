@@ -45,7 +45,6 @@ thisRepository/
 └── Task2_Blender_Addon/               # Task 2 solution
     ├── __init__.py                   # Blender addon code
     ├── README.md                     # Installation & usage
-    └── TESTING_GUIDE.md              # Testing instructions
 
 ```
 
