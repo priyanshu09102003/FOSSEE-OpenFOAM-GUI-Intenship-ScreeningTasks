@@ -211,38 +211,6 @@ fossee_cube_tools/
 └── __init__.py          # Main addon code
 ```
 
-## Testing Checklist
-
-Before submitting, test these scenarios:
-
-### Feature Set 1:
-- [ ] Generate 4 cubes → Creates 2×2 grid
-- [ ] Generate 1 cube → Creates single cube
-- [ ] Generate 20 cubes → Creates 4×5 or 5×4 grid
-- [ ] Generate 25 cubes → Shows "out of range" error
-- [ ] Delete selected cubes → Removes selected objects
-- [ ] Generate with overlap avoidance → Avoids existing cubes
-
-### Feature Set 2:
-- [ ] Select 2 touching cubes → Merges successfully
-- [ ] Select 2 separate cubes → Shows error (no common face)
-- [ ] Select 3 touching cubes → Merges all into one
-- [ ] Merged result has no interior faces → Visual inspection
-
-## Requirements for Submission
-
-✅ UI panel in sidebar
-✅ Input validation (N ≤ 20)
-✅ Error message for N > 20
-✅ Cube generation in 2D array
-✅ Separate collection for cubes
-✅ Delete selected functionality
-✅ Overlap avoidance (optional bonus)
-✅ Merge meshes button
-✅ Common face detection
-✅ Vertex merging
-✅ Interior face deletion
-
 ## Credits
 
 Created for FOSSEE OpenFOAM GUI Internship - Spring 2026
