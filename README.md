@@ -28,24 +28,25 @@ This submission contains solutions for **BOTH required tasks** of the OpenFOAM G
 ##  Folder Structure
 
 ```
-complete_submission/
+thisRepository/
 ├── README.md                          # This file
 ├── Task1_Binary_Tree/                 # Task 1 solution
 │   ├── binary_tree_package/
 │   │   ├── __init__.py               # Main binary tree code
 │   │   └── general_tree.py           # Bonus: general tree
 │   ├── main.py                       # Test script
-│   ├── test_general_tree.py          # Bonus tests
+│   ├── test_general_tree.py          # Other tests
 │   ├── test.yaml                     # Sample YAML
 │   ├── setup.py                      # Package setup
 │   ├── requirements.txt              # Dependencies
 │   ├── README.md                     # Task 1 documentation
-│   └── SUBMISSION_README.md          # Submission details
+│
 │
 └── Task2_Blender_Addon/               # Task 2 solution
     ├── __init__.py                   # Blender addon code
     ├── README.md                     # Installation & usage
     └── TESTING_GUIDE.md              # Testing instructions
+
 ```
 
 ---
