@@ -1,0 +1,14 @@
+value: Grandparent
+children:
+- value: Parent 1
+  children:
+  - value: Child 1.1
+  - value: Child 1.2
+- value: Parent 2
+  children:
+  - value: Child 2.1
+  - value: Child 2.2
+  - value: Child 2.3
+- value: Parent 3
+  children:
+  - value: Child 3.1

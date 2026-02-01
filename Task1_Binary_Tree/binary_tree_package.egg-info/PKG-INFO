@@ -1,0 +1,253 @@
+Metadata-Version: 2.4
+Name: binary-tree-package
+Version: 1.0.0
+Summary: A comprehensive binary tree package with YAML integration
+Home-page: https://github.com/priyanshu09102003/binary-tree-package
+Author: Priyanshu Paul
+Author-email: paulpriyanshu704@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: PyYAML>=5.1
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# Binary Tree Package with YAML Integration
+
+A comprehensive Python package for creating, manipulating, and persisting binary trees with YAML file support.
+
+## Features
+
+### Feature Set 1: Binary Tree Operations
+- **Node class** for creating binary tree structures
+- **Create new binary tree** with a root node
+- **Add nodes** to existing binary tree using path notation (e.g., "LR" for left-then-right)
+- **Delete nodes** from binary tree (single node or entire tree)
+- **Print tree** in visual format or print a specific range of values
+- **Edit node values** in the binary tree
+
+### Feature Set 2: YAML Integration
+- **Parse YAML files** to generate binary trees
+- **Write binary trees** to YAML files
+- Preserve tree structure in human-readable YAML format
+
+## Installation
+
+### Method 1: Install from source using pip
+
+```bash
+# Clone or download this package
+cd binary_tree_package
+
+# Install the package
+pip install -e .
+```
+
+### Method 2: Install dependencies manually
+
+```bash
+pip install -r requirements.txt
+```
+
+## Requirements
+
+- Python >= 3.7
+- PyYAML >= 5.1
+
+## Usage
+
+### Basic Example
+
+```python
+from binary_tree_package import *
+
+# Create a simple tree
+root = Node(1)
+root.left = Node(2)
+root.right = Node(3)
+root.left.left = Node(4)
+root.left.right = Node(5)
+
+# Print the tree
+print_tree(root)
+```
+
+### Adding Nodes by Path
+
+```python
+root = Node(10)
+
+# Add nodes using path notation
+# L = left, R = right
+add_node_by_path(root, "L", 5)      # Add left child with value 5
+add_node_by_path(root, "R", 15)     # Add right child with value 15
+add_node_by_path(root, "LL", 3)     # Add left-left child with value 3
+add_node_by_path(root, "LR", 7)     # Add left-right child with value 7
+
+print_tree(root)
+```
+
+### YAML Integration
+
+**test.yaml:**
+```yaml
+value: 10
+left:
+  value: 5
+  left:
+    value: 3
+  right:
+    value: 7
+right:
+  value: 15
+  right:
+    value: 18
+```
+
+**Python code:**
+```python
+# Build tree from YAML file
+yaml_tree_root = build_tree_from_yaml("test.yaml")
+print_tree(yaml_tree_root)
+
+# Write tree to YAML file
+write_tree_to_yaml(yaml_tree_root, "output.yaml")
+```
+
+### Editing and Deleting
+
+```python
+# Edit a node's value
+edit_node_value(root, old_value=7, new_value=8)
+
+# Delete a specific node
+root = delete_node(root, value=5)
+
+# Delete entire tree
+delete_tree(root)
+```
+
+### Print Tree Range
+
+```python
+# Print only nodes with values between 5 and 15
+print_tree_range(root, min_value=5, max_value=15)
+```
+
+## Running the Test Script
+
+```bash
+# Make sure you're in the package directory
+cd binary_tree_package
+
+# Run the main test script
+python main.py
+```
+
+This will execute comprehensive tests demonstrating all features.
+
+## API Reference
+
+### Classes
+
+#### `Node(value)`
+Creates a new node with the specified value.
+
+**Attributes:**
+- `value`: The value stored in the node
+- `left`: Reference to left child node
+- `right`: Reference to right child node
+
+### Functions
+
+#### `create_binary_tree(value) -> Node`
+Creates a new binary tree with a root node.
+
+#### `add_node_by_path(root, path, value) -> bool`
+Adds a node to the tree using path notation.
+- `path`: String of 'L' and 'R' characters (e.g., "LR", "RLL")
+- Returns: True if successful, False otherwise
+
+#### `delete_node(root, value) -> Optional[Node]`
+Deletes a node with the specified value.
+- Returns: The new root of the tree
+
+#### `delete_tree(root) -> None`
+Deletes the entire binary tree.
+
+#### `print_tree(root, prefix="Root:", is_left=False) -> None`
+Prints the tree in a visual format.
+
+#### `print_tree_range(root, min_value, max_value) -> None`
+Prints nodes within a specified value range.
+
+#### `edit_node_value(root, old_value, new_value) -> bool`
+Changes a node's value.
+- Returns: True if value was found and updated
+
+#### `build_tree_from_yaml(yaml_file) -> Optional[Node]`
+Builds a binary tree from a YAML file.
+- Returns: Root node of the constructed tree
+
+#### `write_tree_to_yaml(root, yaml_file) -> bool`
+Writes a binary tree to a YAML file.
+- Returns: True if successful
+
+## Project Structure
+
+```
+binary_tree_package/
+├── binary_tree_package/
+│   └── __init__.py          # Main package code
+├── main.py                   # Test script
+├── test.yaml                 # Sample YAML file
+├── setup.py                  # Package setup configuration
+├── requirements.txt          # Dependencies
+└── README.md                # This file
+```
+
+## Testing
+
+The package includes a comprehensive test script (`main.py`) that demonstrates:
+
+1. Basic tree creation and printing
+2. Adding nodes by path
+3. Building trees from YAML files
+4. Editing node values
+5. Writing trees to YAML files
+6. Printing nodes in a range
+7. Deleting specific nodes
+8. Deleting entire trees
+
+## Example Output
+
+```
+Root:10
+ L---5
+  L---3
+  R---7
+ R---15
+  L---12
+  R---18
+```
+
+## Author
+
+[Priyanshu Paul]
+
+## License
+
+MIT License
+
+## Acknowledgments
+
+Created as part of the FOSSEE OpenFOAM GUI Internship Screening Task.
