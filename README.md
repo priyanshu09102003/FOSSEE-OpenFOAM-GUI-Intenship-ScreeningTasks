@@ -14,7 +14,7 @@ This submission contains solutions for **BOTH required tasks** of the OpenFOAM G
 ###  Task 1: Binary Tree Implementation and YAML Integration
 - Complete binary tree package with all required features
 - YAML file integration for persistence
-- General n-ary tree implementation
+- Additional Feature: General n-ary tree implementation
 - Pip-installable Python package
 
 ### Task 2: Blender Addon Development
